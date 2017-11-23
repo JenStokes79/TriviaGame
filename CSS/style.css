@@ -1,0 +1,31 @@
+.questions {
+	background: gray;
+	display: none;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+h2 {
+	color: white;
+	font-size: 16px;
+
+}
+.choices {
+	color: white;
+	font-size: 12px;
+}
+
+body {
+	background-image: url("images/background.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:absolute;
+
+}
+
+p {
+	font-size: 30px;
+	
+}
