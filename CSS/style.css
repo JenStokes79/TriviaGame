@@ -1,5 +1,11 @@
 .questions {
-	background: gray;
+	background-color: #ffffff;
+ 	padding: 5px;
+    opacity: 0.6;
+    display: none;
+  
+}
+.end {
 	display: none;
 }
 
@@ -8,13 +14,10 @@ h1 {
 	text-align: center;
 }
 h2 {
-	color: white;
+	color: black;
 	font-size: 16px;
 
-}
-.choices {
-	color: white;
-	font-size: 12px;
+
 }
 
 body {

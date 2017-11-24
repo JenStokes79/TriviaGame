@@ -40,7 +40,6 @@ questionSeven = {
 var correctCounter = 0;
 var incorrectCounter = 0;
 var unansweredCounter = 0;
-var questions = [];
 //console.log(questionFive.choices)
 
 
@@ -53,9 +52,11 @@ $("#start").click(launchQuiz);
 function launchQuiz() {
 	$("#start").hide(); //hides 'Launch Quiz' button
 	$(".questions").toggle();
+	$(".end").toggle();
 
 	}
 	
+
 
 
 
