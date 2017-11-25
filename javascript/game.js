@@ -39,6 +39,10 @@ questionSeven = {
 
 var correctCounter = 0;
 var incorrectCounter = 0;
+
+
+
+
 //console.log(questionFive.choices)
 
 
@@ -52,12 +56,23 @@ function launchQuiz() {
 	$("#start").hide(); //hides 'Launch Quiz' button
 	$(".questions").toggle();
 	$(".end").toggle();
-
-	}
-
-
+	$(".timer").toggle();
 	
 
+var count=5;
+var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+function timer() {
+	  count--;
+  if (count <= 0) {
+     clearInterval(counter);
+     return;
+  }
+ $(".timer").html(count + "sec left")
+	}
+setTimeout(function(){
+  $(".timer").html("game over")
+}, 5000);
+}
 
 
 
@@ -170,8 +185,7 @@ function showResults(){
 
 $("#play").click(playAgain);
 function playAgain(){
-	$(".questions").toggle();
-	$(".end").show(); // not showing submit button
+	launchQuiz();
 	$(".results1").hide();
 	$("#play").hide();
 
