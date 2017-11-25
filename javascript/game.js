@@ -40,14 +40,15 @@ questionSeven = {
 var correctCounter = 0;
 var incorrectCounter = 0;
 var unansweredCounter = 0;
+
 //console.log(questionFive.choices)
 
 
 
+
+
+
 $("#start").click(launchQuiz);
-
-
-
 
 function launchQuiz() {
 	$("#start").hide(); //hides 'Launch Quiz' button
@@ -55,10 +56,113 @@ function launchQuiz() {
 	$(".end").toggle();
 
 	}
+
+
 	
 
 
 
+
+
+
+
+
+
+
+$("#submit").click(showResults);
+
+function showResults(){
+	if ($("#correct1").is(':checked')){
+		correctCounter++
+	} else if ($("#incorrect1").is(':checked')){
+		incorrectCounter++
+	
+	} else if ($("#incorrect11").is(':checked')){
+		incorrectCounter++
+	}else if ($("#incorrect111").is(':checked')){
+		incorrectCounter++
+
+	}
+
+
+	if ($("#correct2").is(':checked')){
+		correctCounter++
+	} else if($("#incorrect2").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect22").is(':checked')){
+		incorrectCounter++
+
+	}else if($("#incorrect222").is(':checked')){
+		incorrectCounter++
+
+	}
+
+
+	if ($("#correct3").is(':checked')){
+		correctCounter++
+	} else if($("#incorrect3").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect33").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect333").is(':checked')){
+		incorrectCounter++
+	}
+
+
+
+
+	if ($("#correct4").is(':checked')){
+		correctCounter++
+	} else if($("#incorrect4").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect44").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect444").is(':checked')){
+		incorrectCounter++
+
+	}
+
+
+	if ($("#correct5").is(':checked')){
+		correctCounter++
+	} else if($("#incorrect5").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect55").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect555").is(':checked')){
+		incorrectCounter++
+	
+	}
+
+	if ($("#correct6").is(':checked')){
+		correctCounter++
+	} else if($("#incorrect6").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect66").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect666").is(':checked')){
+		incorrectCounter++
+	}
+
+
+
+	if ($("#correct7").is(':checked')){
+		correctCounter++
+	} else if($("#incorrect7").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect77").is(':checked')){
+		incorrectCounter++
+	}else if($("#incorrect777").is(':checked')){
+		incorrectCounter++
+	}
+	$(".questions").hide();
+	$("#submit").hide();
+	$("#correct").html("Correct: " + correctCounter);
+	$("#incorrect").html("Incorrect: " + incorrectCounter);
+
+}
+
+//need a "play again", timer, ability to only choose one option, Rank(optional)
 
 
 

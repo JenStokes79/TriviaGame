@@ -39,57 +39,58 @@
 							
 						<div class="questions">
 							<h2>1. How long is the average ISS mission?</h1>
-							<input class="choices" type="radio" name="1"> 6 months<br>
-							<input class="choices" type="radio" name="2"> 3 months<br>
-							<input class="choices" type="radio" name="3"> 1 year<br>
-							<input class="choices" type="radio" name="4"> 8 months<br>
+							<input class="choices1" type="radio" id="correct1"> 6 months<br>
+							<input class="choices1" type="radio" id="incorrect1"> 3 months<br>
+							<input class="choices1" type="radio" id="incorrect11"> 1 year<br>
+							<input class="choices1" type="radio" id="incorrect111"> 8 months<br>
 							<br>
 							<h2>2. What can be seen in late September through March, usually only if you are very far north?</h2>
-							<input class="choices" type="radio" name="1"> Sun Spots<br>
-							<input class="choices" type="radio" name="2"> Aurora Borealis<br>
-							<input class="choices" type="radio" name="3"> Solar Flares<br>
-							<input class="choices" type="radio" name="4"> Aurora Glitteralus<br>
+							<input class="choices2" type="radio" id="incorrect2"> Sun Spots<br>
+							<input class="choices2" type="radio" id="correct2"> Aurora Borealis<br>
+							<input class="choices2" type="radio" id="incorrect22"> Solar Flares<br>
+							<input class="choices2" type="radio" id="incorrect222"> Aurora Glitteralus<br>
 							<br>
 							<h2>3. How old is the Universe?</h2>
-							<input class="choices" type="radio" name="1"> 500 Million Million Years<br>
-							<input class="choices" type="radio" name="2"> 4.6 Billion Years<br>
-							<input class="choices" type="radio" name="3"> 13.8 Billion Year<br>
-							<input class="choices" type="radio" name="4"> No one really knows<br>
+							<input class="choices3" type="radio" id="incorrect3"> 500 Million Million Years<br>
+							<input class="choices3" type="radio" id="incorrect33"> 4.6 Billion Years<br>
+							<input class="choices3" type="radio" id="correct3"> 13.8 Billion Year<br>
+							<input class="choices3" type="radio" id="incorrect333"> No one really knows<br>
 							<br>
 							<h2>4. What has a gravitational pull so strong that not even light can escape it?</h2>
-							<input class="choices" type="radio" name="1"> A Black Hole<br>
-							<input class="choices" type="radio" name="2"> A Supernova<br>
-							<input class="choices" type="radio" name="3"> The Sun<br>
-							<input class="choices" type="radio" name="4"> A Nebula<br>
+							<input class="choices4" type="radio" id="correct4"> A Black Hole<br>
+							<input class="choices4" type="radio" id="incorrect4"> A Supernova<br>
+							<input class="choices4" type="radio" id="incorrect44"> The Sun<br>
+							<input class="choices4" type="radio" id="incorrect444"> A Nebula<br>
 							<br>
 							<h2>5. What was the last space flight to the Moon?</h2>
-							<input class="choices" type="radio" name="1"> Shuttle Discovery<br>
-							<input class="choices" type="radio" name="2"> Mercury 7<br>
-							<input class="choices" type="radio" name="3"> Apollo 13<br>
-							<input class="choices" type="radio" name="4"> Apollo 17<br>
+							<input class="choices5" type="radio" id="incorrect5"> Shuttle Discovery<br>
+							<input class="choices5" type="radio" id="incorrect55"> Mercury 7<br>
+							<input class="choices5" type="radio" id="incorrect555"> Apollo 13<br>
+							<input class="choices5" type="radio" id="correct5"> Apollo 17<br>
 							<br>
 							<h2>6. What is the longest time any person has spent in space continuously?</h2>
-							<input class="choices" type="radio" name="1"> 180 Days<br>
-							<input class="choices" type="radio" name="2"> 34 Days<br>
-							<input class="choices" type="radio" name="3"> 437 Day<br>
-							<input class="choices" type="radio" name="4"> 365 Days<br>
+							<input class="choices6" type="radio" id="correct6"> 180 Days<br>
+							<input class="choices6" type="radio" id="incorrect6"> 34 Days<br>
+							<input class="choices6" type="radio" id="incorrect66"> 437 Day<br>
+							<input class="choices6" type="radio" id="incorrect666"> 365 Days<br>
 							<br>
 							<h2>7. How big is the Moon relative to Earth?</h2>
-							<input class="choices" type="radio" name="1"> 27%<br>
-							<input class="choices" type="radio" name="2"> 25%<br>
-							<input class="choices" type="radio" name="3"> 50%<br>
-							<input class="choices" type="radio" name="4"> 34%<br>
-
+							<input class="choices7" type="radio" id="correct7"> 27%<br>
+							<input class="choices7" type="radio" id="incorrect7"> 25%<br>
+							<input class="choices7" type="radio" id="incorrect77"> 50%<br>
+							<input class="choices7" type="radio" id="incorrect777"> 34%<br>
 						</div>
+
 
 						<div class="end">
 							<br>
 							<br>
 							<P><button id="submit" type="button" class="btn btn-default btn-lg btn-block">SUBMIT FOR RESULTS</button></p>
-
-						
 						</div>
-
+						
+						<div class="results" id="correct"></div>
+						<div class="results" id="incorrect"></div>
+						<div class="results" id="rank"></div>
 
 					</div>
 				</div>
