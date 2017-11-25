@@ -32,3 +32,22 @@ p {
 	font-size: 30px;
 	
 }
+#correct {
+	color: black;
+	font-size: 24px;
+	text-align: center;
+}
+#incorrect {
+	color: black;
+	font-size: 24px;
+	text-align: center;
+}
+.results1 {
+	background-color: #ffffff;
+ 	padding: 5px;
+    opacity: 0.6;
+    display: none;
+}
+#play {
+	display: none;
+}

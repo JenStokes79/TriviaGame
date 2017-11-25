@@ -39,8 +39,6 @@ questionSeven = {
 
 var correctCounter = 0;
 var incorrectCounter = 0;
-var unansweredCounter = 0;
-
 //console.log(questionFive.choices)
 
 
@@ -155,6 +153,14 @@ function showResults(){
 	}else if($("#incorrect777").is(':checked')){
 		incorrectCounter++
 	}
+
+	//if (correctCounter >= 4){
+	//	$("#rank").html("Rank Cadet")
+	//}
+
+
+	$(".results1").toggle();
+	$("#play").toggle();
 	$(".questions").hide();
 	$("#submit").hide();
 	$("#correct").html("Correct: " + correctCounter);
@@ -162,7 +168,20 @@ function showResults(){
 
 }
 
-//need a "play again", timer, ability to only choose one option, Rank(optional)
+$("#play").click(playAgain);
+function playAgain(){
+	$(".questions").toggle();
+	$(".end").show(); // not showing submit button
+	$(".results1").hide();
+	$("#play").hide();
+
+
+}
+
+
+
+//need timer, ability to only choose one option, 
+//make it so they have to choose, Rank(optional)
 
 
 
