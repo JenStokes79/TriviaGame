@@ -59,30 +59,29 @@ function launchQuiz() {
 	$(".timer").toggle();
 	
 
-var count=5;
-var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+var count = 60;
+var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+
 function timer() {
 	  count--;
   if (count <= 0) {
      clearInterval(counter);
      return;
   }
- $(".timer").html(count + "sec left")
+ $(".timer").html("T-Minus: " + count)
+
 	}
+	
 setTimeout(function(){
   $(".timer").html("game over")
-}, 5000);
-}
-
-
-
-
-
+  $(".questions").hide();
+}, 60000);
 
 
 
 
 $("#submit").click(showResults);
+
 
 function showResults(){
 	if ($("#correct1").is(':checked')){
@@ -173,7 +172,7 @@ function showResults(){
 	//	$("#rank").html("Rank Cadet")
 	//}
 
-
+	$(".timer").hide();
 	$(".results1").toggle();
 	$("#play").toggle();
 	$(".questions").hide();
@@ -183,19 +182,33 @@ function showResults(){
 
 }
 
+
+
+
 $("#play").click(playAgain);
 function playAgain(){
-	launchQuiz();
 	$(".results1").hide();
 	$("#play").hide();
+
+	$(':radio').each(function () {
+		$(this).removeAttr('checked');
+		$('input[type="radio"]').prop('checked', false);
+	})
+	launchQuiz();
+
+
+
+}
 
 
 }
 
 
 
-//need timer, ability to only choose one option, 
-//make it so they have to choose, Rank(optional)
+
+
+// Rank(optional), clear the quiz, get submit button working on second game, game over pic
+//
 
 
 
