@@ -41,6 +41,13 @@ p {
 	font-size: 24px;
 	text-align: center;
 }
+.results {
+	color: white;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	padding: 10px;
+}
 .results1 {
 	background-color: #ffffff;
  	padding: 5px;
@@ -51,7 +58,8 @@ p {
 	display: none;
 }
 .timer {
-	color: black;
+	color: white;
+	font-weight: bold;
 	font-size: 24px;
 	text-align: center;
 	display: none;

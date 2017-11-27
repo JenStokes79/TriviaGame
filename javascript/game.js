@@ -39,7 +39,7 @@ questionSeven = {
 
 var correctCounter = 0;
 var incorrectCounter = 0;
-
+var submit = 
 
 
 
@@ -58,9 +58,11 @@ function launchQuiz() {
 	$(".end").toggle();
 	$(".timer").toggle();
 	
+}
 
 var count = 60;
 var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+
 
 function timer() {
 	  count--;
@@ -73,7 +75,7 @@ function timer() {
 	}
 	
 setTimeout(function(){
-  $(".timer").html("game over")
+  $(".timer").html("Game Over")
   $(".questions").hide();
 }, 60000);
 
@@ -81,7 +83,7 @@ setTimeout(function(){
 
 
 $("#submit").click(showResults);
-
+//stopTimer();
 
 function showResults(){
 	if ($("#correct1").is(':checked')){
@@ -168,11 +170,16 @@ function showResults(){
 		incorrectCounter++
 	}
 
-	//if (correctCounter >= 4){
-	//	$("#rank").html("Rank Cadet")
-	//}
+	if (correctCounter >= 4) {
+	$("#rank").html("CONGRATS YOU LAUNCHED THE SHUTTLE!" + '<img src= "CSS/images/launch.gif">');
+	
+	} else if (correctCounter <= 3) {
 
-	$(".timer").hide();
+		$("#rank").html("SORRY, YOU FAILED TO LAUNCH!" + '<img src= "CSS/images/fail.gif">')
+	}
+
+
+	//$(".timer").hide();
 	$(".results1").toggle();
 	$("#play").toggle();
 	$(".questions").hide();
@@ -180,25 +187,33 @@ function showResults(){
 	$("#correct").html("Correct: " + correctCounter);
 	$("#incorrect").html("Incorrect: " + incorrectCounter);
 
+
+
 }
+
+//function stopTimer(){
+//	if (submit = true) {
+//		clearInterval(counter)
+//	}
+//}
 
 
 
 
 $("#play").click(playAgain);
+
 function playAgain(){
 	$(".results1").hide();
 	$("#play").hide();
-
 	$(':radio').each(function () {
 		$(this).removeAttr('checked');
 		$('input[type="radio"]').prop('checked', false);
 	})
+	
 	launchQuiz();
 
 
 
-}
 
 
 }
@@ -207,7 +222,10 @@ function playAgain(){
 
 
 
-// Rank(optional), clear the quiz, get submit button working on second game, game over pic
+
+
+
+// Rank(optional), get submit button working and timer on second game, game over pic
 //
 
 
