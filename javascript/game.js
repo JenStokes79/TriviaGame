@@ -1,89 +1,53 @@
-var questionOne = {
-	question: "How long is the avergae ISS mission?",
-	choices: ["6 months", "3 Months", "1 Year", "8 Months"],
-	answer: 0
-},
-questionTwo = {
-	question: "What can be seen in late September through March, usually only if you are very far north?",
-	choices: ["Sun Spots", "Aurora Borealis", "Solar Flares", "Aurora Glitteralus"],
-	answer: 1
-},
-questionThree = {
-	question: "How old is the Universe?",
-	choices: ["500 Million Million Years", "4.6 Billion Years", "13.8 Billion Years", "No one really knows"],
-	answer: 2
-},
-questionFour = {
-	question: "What has a gravitational pull so strong that not even light can escape it?",
-	choices: ["A Black Hole", "A Supernova", "The Sun", " A Nebula"],
-	answer: 0
-},
-questionFive = {
-	question: "What was the last space flight to the Moon?",
-	choices: ["Shuttle Discovery", "Mercury 7", "Apollo 13", "Apollo 17"],
-	answer: 3
-},
-questionSix = {
-	question: "What is the longest time any person has spent in space continuously?",
-	choices: ["180 Days", "34 Days", "437 Days", "365 Days"],
-	answer: 2
-},
-questionSeven = {
-	question: "How big is the Moon relative to Earth?",
-	choices: ["27%", "25%", "50%", "34%"],
-	answer: 0
-}
 
-
-
-
+//variables
 var correctCounter = 0;
 var incorrectCounter = 0;
-var submit = 
 
-
-
-//console.log(questionFive.choices)
-
-
-
-
-
-
+//starts game on-click event
 $("#start").click(launchQuiz);
 
+//starts the timer, shows the questions & answers, hides the start button
+//shows the submit button
 function launchQuiz() {
 	$("#start").hide(); //hides 'Launch Quiz' button
 	$(".questions").toggle();
 	$(".end").toggle();
 	$(".timer").toggle();
 	
-}
-
-var count = 60;
-var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-
+//variables for timer
+//timer starts when user clicks "launch quiz"
+//counts down from 90 seconds. 
+var count = 90;
+var counter = setInterval(timer, 1000);
 
 function timer() {
 	  count--;
   if (count <= 0) {
      clearInterval(counter);
-     return;
-  }
- $(".timer").html("T-Minus: " + count)
 
-	}
-	
+     return;
+	 }
+
+//shows timer in game
+$(".timer").html("T-Minus: " + count)
+}
+
+//if user does not click "submit" before
+//timer runs out, questions will hide and user gets "game over" notification
 setTimeout(function(){
   $(".timer").html("Game Over")
   $(".questions").hide();
-}, 60000);
+}, 90000);
 
+$("#submit").click(function () {
+       clearTimeout(counter);
 
+    });
+}
 
+//submit button tally's score and notifies user of correct & incorrect answers
 
 $("#submit").click(showResults);
-//stopTimer();
 
 function showResults(){
 	if ($("#correct1").is(':checked')){
@@ -158,8 +122,6 @@ function showResults(){
 		incorrectCounter++
 	}
 
-
-
 	if ($("#correct7").is(':checked')){
 		correctCounter++
 	} else if($("#incorrect7").is(':checked')){
@@ -170,8 +132,11 @@ function showResults(){
 		incorrectCounter++
 	}
 
+	//gives a ranking of either "lift off"(pass), or "you failed to launch"(fail)
+	//gifs show for fun
+
 	if (correctCounter >= 4) {
-	$("#rank").html("CONGRATS YOU LAUNCHED THE SHUTTLE!" + '<img src= "CSS/images/launch.gif">');
+	$("#rank").html("LIFT OFF!" + '<img src= "CSS/images/launch.gif">');
 	
 	} else if (correctCounter <= 3) {
 
@@ -179,54 +144,50 @@ function showResults(){
 	}
 
 
-	//$(".timer").hide();
-	$(".results1").toggle();
-	$("#play").toggle();
-	$(".questions").hide();
-	$("#submit").hide();
-	$("#correct").html("Correct: " + correctCounter);
-	$("#incorrect").html("Incorrect: " + incorrectCounter);
-
-
+	$(".results1").toggle(); //shows results
+	$("#play").toggle(); // gives option to play again
+	$(".questions").hide(); //hides questions
+	$("#submit").hide(); //hides submit button
+	$("#correct").html("Correct: " + correctCounter); //shows correct number of answers on HTML
+	$("#incorrect").html("Incorrect: " + incorrectCounter); //shows incorrect number of answers on HTML
 
 }
 
-//function stopTimer(){
-//	if (submit = true) {
-//		clearInterval(counter)
-//	}
-//}
 
+	//to restart game
+	$("#play").click(playAgain);
+	
+	function playAgain(){
+	$(document).scrollTop(0); //scrolls to top of page
+	$(".results1").hide(); // removes the results
+	$("#submit").show(); // option to submit new game
+	$("#play").hide(); // hides re-launch quiz button
+	$(".questions").toggle(); //shows questions & answers
+	$("#rank").hide(); //removes gifs
+	var correctCounter = 0; //should reset correct answers to 0 - doesn't work
+	var incorrectCounter = 0; //should reset incorrect answers to 0 - dosen't work
 
-
-
-$("#play").click(playAgain);
-
-function playAgain(){
-	$(".results1").hide();
-	$("#play").hide();
+	//this function clears the radio buttons for new game
 	$(':radio').each(function () {
 		$(this).removeAttr('checked');
 		$('input[type="radio"]').prop('checked', false);
 	})
-	
-	launchQuiz();
+};
+
+
+//what does work:
+//launch quiz and all toggles (hide & show buttons on click)
+//Game Over if time runs out
+//results, win/lose 
+//shows corrects gifs on win/lose
+//restart quiz, radio buttons reset, submit button works
 
 
 
-
-
-}
-
-
-
-
-
-
-
-
-// Rank(optional), get submit button working and timer on second game, game over pic
-//
+//does not work:
+//timer does not actually stop
+//timer does not reset 
+//tallys do not clear on reset
 
 
 
